@@ -1,0 +1,21 @@
+{
+  "name": "figure-book",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tappily/figure-book",
+  "authors": [
+    "tappily <tappily.b@gmail.com>"
+  ],
+  "keywords": [
+    "LESS",
+    "CSS",
+    "HTML5"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

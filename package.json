@@ -1,0 +1,19 @@
+{
+  "name": "figure-book",
+  "version": "0.0.0",
+  "description": "figure-book ===========",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tappily/figure-book.git"
+  },
+  "author": "",
+  "license": "LICENSE",
+  "bugs": {
+    "url": "https://github.com/tappily/figure-book/issues"
+  },
+  "homepage": "https://github.com/tappily/figure-book"
+}

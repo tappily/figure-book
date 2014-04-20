@@ -1,0 +1,51 @@
+//imports
+@import "book/main";
+
+//defaults
+@paper-font: san-serif;
+@figure-count: 0;
+@ink-weight: 400;
+@figure-ink-weight: @ink-weight;
+@paper-fill: #f5f5f5;
+@paper-margin: 0.67rem;
+@figure-margin: @paper-margin;
+@ink-color: #222;
+@figure-color: @ink-color;
+
+html {
+  margin: 0;
+  padding: 0;
+  box-shadow: inset 0 0 25vw darken(@paper-fill, 10%);
+  background-color: @paper-fill;
+  color: @ink-color;
+  font-family: @paper-font;
+  font-weight: @ink-weight;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+}
+
+main {
+  order: 1;
+  font-size: 1.22rem;
+}
+
+//define
+header {
+  text-align: center;
+  font-size: 1rem;
+  order: 2;
+}
+
+h1 {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1;
+  padding: 1ex 1em;
+}

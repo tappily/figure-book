@@ -1,0 +1,13 @@
+{
+  "google": {
+    "host": "fonts.googleapis.com",
+    "id": "",
+    "faces": [{
+      "family": "Montserrat",
+      "styles": [
+        { "weight": "400" },
+        { "weight": "700" }
+      ]
+    }]
+  }
+}

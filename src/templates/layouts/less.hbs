@@ -1,0 +1,11 @@
+{{{globRaw 'src/less/*.less'}}}
+@figure-count: {{figures/length}};
+{{#each figures}}
+    @figure-{{@index}}: url("{{url}}");
+{{/each}}
+{{#each paper}}
+    @{{@key}}:{{.}};
+{{/each}}
+{{#with webfont/google/faces/[0]}}
+@paper-font: "{{family}}";
+{{/with}}

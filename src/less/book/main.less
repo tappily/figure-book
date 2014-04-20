@@ -1,0 +1,91 @@
+//imports
+@import "../../../bower_components/loopless/dist/less/loop";
+//defaults
+@figure-count: 0;
+@figure-ink-weight: 400;
+@figure-margin: 0.67rem;
+@figure-ink-color: #222;
+
+//define
+article {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 1rem;
+  min-height: 100vh;
+
+  figure {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+
+    margin: @figure-margin;
+    min-height: 10vh;
+
+    box-shadow: 0 0 0 .1rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: relative;
+
+    &:before {
+      opacity: 0;
+    }
+
+    &:empty {
+      .cross-hatch(fade(@figure-color, 50%));
+    }
+
+    figcaption {
+      position: absolute;
+      padding: 1ex;
+      border-bottom: .1rem solid;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      text-shadow: 0 .08rem 0 fade(contrast(@figure-color), 25%);
+      //box-shadow: 0 0 0 0.1rem;
+    }
+    .loop(over, '.figures', 0, (@figure-count - 1));
+  }
+
+}
+
+.loop-over(@selector, @index, @from, @to) when(@selector='.figures') {
+  .frame-figure(@index);
+}
+
+.frame-figure(@i; @x:50%;) {
+
+  @n: (@i+1);
+
+  &:nth-child(@{n}) {
+    @f: 'figure-@{i}';
+
+    background-image: @@f;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &:before {
+      content: @@f;
+    }
+
+    figcaption {
+      top: 0;
+      left: @x;
+      transform: translateX((@x * -1));
+    }
+  }
+}
+
+.cross-hatch(@color:black) {
+  background-image+:
+  linear-gradient(-45deg, transparent 45%, @color 45%, @color 55%, transparent 55%);
+  background-image+:
+  linear-gradient(45deg, transparent 45%, @color 45%, @color 55%, transparent 55%);
+  background-size+: 1em 1em;
+  background-repeat: repeat;
+}
